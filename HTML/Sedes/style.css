@@ -1,0 +1,17 @@
+.btn-adiciona{
+    padding: 5px;
+}
+
+.container table{
+    margin: 20px;
+}
+
+table .btn-edita{
+    color: blue;
+    cursor: pointer;
+}
+
+table .btn-deleta{
+    color:blue;
+    cursor: pointer;
+}
