@@ -1,4 +1,5 @@
 const app = require('./config/express-config');
+const User = require('./users/model/User');
 
 app.get('/', (req, res)=>{
 res.send('hello world');
