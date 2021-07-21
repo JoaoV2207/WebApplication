@@ -1,4 +1,5 @@
-const sequelize = require('../../database/');
+
+const sequelize = require('../../database/index');
 const {DataTypes} = require('sequelize');
 
 const User = sequelize.define('Users',{
@@ -35,4 +36,5 @@ id: {
 User.sync({alter: false, force: false})
     .then(() => console.log('A tabela user foi criada'))
     .catch((error) => console.log(error))
+    
     module.exports = User;
