@@ -11,6 +11,10 @@ const Livro  = sequelize.define('Livros', {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    genre: {
+        type: DataTypes.STRING,
+        allowNull: false,
     }
 });
 
