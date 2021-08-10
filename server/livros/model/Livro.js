@@ -15,6 +15,10 @@ const Livro  = sequelize.define('Livros', {
     genre: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    image:{
+        type: DataTypes.STRING,
+        allowNull: false,
     }
 });
 
