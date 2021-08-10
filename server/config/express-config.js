@@ -21,4 +21,7 @@ require('./auth');
 const usersRouter = require('../users/controller/user-controller');
 app.use('/users', usersRouter);
 
+const livrosRouter = require('../livros/controller/livro-controller');
+app.use('/livros', livrosRouter);
+
 module.exports = app;
