@@ -5,59 +5,59 @@ const JwtStrategy = require('passport-jwt').Strategy;
 const User = require('../users/model/User');
 
 passport.use(
-    'login',
-    new LocalStrategy(
-        {
-            usernameField:'email',
-            passwordField:'password',
-            session:'false',
-        },
-        async(email, password, done) => {
-            try {
-                const user = await User.findOne({
-                    where: {email: email},
-                });
+  'login',
+  new LocalStrategy(
+    {
+      usernameField: 'email',
+      passwordField: 'password',
+      session: 'false',
+    },
+    async (email, password, done) => {
+      try {
+        const user = await User.findOne({
+          where: {email: email},
+        });
 
-                if(!user){
-                    throw new Error('Usuário e/ou senha incorretos!!');
-                }
+        if (!user) {
+          throw new Error('Usuário e/ou senha incorretos!!');
+        }
 
-                const matchingPassword = await bcrypt.compare(password, user.password);
+        const matchingPassword = await bcrypt.compare(password, user.password);
 
-                if(!matchingPassword){
-                    throw new Error('Usuário e/ou senha incorretos!!');
-                }
+        if (!matchingPassword) {
+          throw new Error('Usuário e/ou senha incorretos!!');
+        }
 
-                return done(null, user);
-            } catch (error) {
-                return done(error, false);
-            }
-        },
-    ),
+        return done(null, user);
+      } catch (error) {
+        return done(error, false);
+      }
+    },
+  ),
 );
 
 const cookieExtractor = (req) => {
-    let token = null;
+  let token = null;
 
-    if(req && req.cookies){
-        token = req.cookies['jwt'];
-    }
+  if (req && req.cookies) {
+    token = req.cookies['jwt'];
+  }
 
-    return token;
+  return token;
 };
 
 passport.use(
-    new JwtStrategy(
-        {
-            secretOrKey: process.env.SECRET_KEY,
-            jwtFromRequest: cookieExtractor,
-        },
-        async (jwtPayload, done) =>{
-            try {
-                return done(null, jwtPayload.user);
-            } catch (error) {
-                return done(error, false);
-            }
-        },
-    ),
+  new JwtStrategy(
+    {
+      secretOrKey: process.env.SECRET_KEY,
+      jwtFromRequest: cookieExtractor,
+    },
+    async (jwtPayload, done) =>{
+      try {
+        return done(null, jwtPayload.user);
+      } catch (error) {
+        return done(error, false);
+      }
+    },
+  ),
 );
