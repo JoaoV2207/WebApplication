@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const LocalStrategy = require('passport-local').Strategy;
 const JwtStrategy = require('passport-jwt').Strategy;
 const User = require('../users/model/User');
+const AuthorizationError = require('../errors/AuthError');
 
 passport.use(
   'login',
@@ -19,13 +20,13 @@ passport.use(
         });
 
         if (!user) {
-          throw new Error('Usuário e/ou senha incorretos!!');
+          throw new AuthorizationError('Usuário e/ou senha incorretos!!');
         }
 
         const matchingPassword = await bcrypt.compare(password, user.password);
 
         if (!matchingPassword) {
-          throw new Error('Usuário e/ou senha incorretos!!');
+          throw new AuthorizationError('Usuário e/ou senha incorretos!!');
         }
 
         return done(null, user);

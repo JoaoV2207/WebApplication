@@ -4,17 +4,17 @@ const express = require('express');
 
 const app = express();
 
-const cors = require('cors')
+const cors = require('cors');
 app.use(cors());
 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 app.use(express.urlencoded({
-    extended: true
-}))
+  extended: true,
+}));
 
-app.use(express.json())
+app.use(express.json());
 
 require('./auth');
 
@@ -23,5 +23,8 @@ app.use('/users', usersRouter);
 
 const livrosRouter = require('../livros/controller/livro-controller');
 app.use('/livros', livrosRouter);
+
+const errorHandler = require('../middlewares/error-handler');
+app.use(errorHandler);
 
 module.exports = app;
