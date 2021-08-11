@@ -6,8 +6,13 @@ const {
   jwtMiddleware,
   checkRole,
 } = require('../../middlewares/auth-middlewares');
+const objectFilter = require('../../middlewares/object-filter');
+const userValidate = require('../../middlewares/user-validator');
 
-router.post('/', async (req, res) => {
+router.post('/', 
+  objectFilter('body',['name', 'email', 'image', 'password']),
+  userValidate('createUser'),
+ async (req, res) => {
   try {
     const user = {
       name: req.body.name,
@@ -46,7 +51,11 @@ router.get('/user/:id', jwtMiddleware, async (req, res) =>{
   }
 });
 
-router.put('/user/:id', jwtMiddleware, async (req, res) =>{
+router.put('/user/:id', 
+  jwtMiddleware,
+  objectFilter('body',['name', 'email', 'image']),
+  userValidate('updateUser'),
+async (req, res) =>{
   try {
     const userId = req.params.id;
     await UserService.updateUser(userId, req.user.id, req.user.role, req.body);
@@ -71,7 +80,7 @@ router.delete('/user/:id',
     }
   });
 
-router.post('/login', notLoggedIn, loginMilddleware);
+router.post('/login', notLoggedIn, userValidate('login'), loginMilddleware);
 
 router.get('/logout', jwtMiddleware, (req, res) => {
   try {
