@@ -21,8 +21,8 @@ require('./auth');
 const usersRouter = require('../users/controller/user-controller');
 app.use('/users', usersRouter);
 
-const livrosRouter = require('../livros/controller/livro-controller');
-app.use('/livros', livrosRouter);
+const productRouter = require('../users/controller/product-controller');
+app.use('/products', productRouter);
 
 const errorHandler = require('../middlewares/error-handler');
 app.use(errorHandler);

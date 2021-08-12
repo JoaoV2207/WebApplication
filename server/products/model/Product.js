@@ -13,6 +13,10 @@ const Product = sequelize.define('Products', {
         allowNull: false,
 
     },
+    author:{
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     genre:{
         type: DataTypes.STRING,
         allowNull: false,
