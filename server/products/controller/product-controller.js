@@ -26,19 +26,19 @@ router.post('/',
         try {
             const product = {
                 ...req.body,
-                UserID: req.user.id,
+                UserId: req.user.id,
             };
             await ProductService.createProduct(product);
             req.status(201).end();
         } catch (error) {
             next(error);
         }
-    }
+    },
 );   
 
 router.get('/:id',
     jwtMiddleware,
-    async(req, req, next) =>{
+    async(req, res, next) =>{
         try {
             const product = await ProductService.getProductById(req.params.id);
             res.status(200).json(product);

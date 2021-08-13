@@ -21,7 +21,7 @@ require('./auth');
 const usersRouter = require('../users/controller/user-controller');
 app.use('/users', usersRouter);
 
-const productRouter = require('../users/controller/product-controller');
+const productRouter = require('../products/controller/product-controller');
 app.use('/products', productRouter);
 
 const errorHandler = require('../middlewares/error-handler');
