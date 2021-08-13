@@ -1,12 +1,8 @@
 const router = require('express').Router();
-const {
-    loginMilddleware,
-    notLoggedIn,
-    jwtMiddleware,
-    checkRole,
-} = require('../../middlewares/auth-middlewares');
-const productValidate = require('../../middlewares/product-validator');
-const ProductService = require ('../service/ProductService');
+const {jwtMiddleware} = require ('../../middlewares/auth-middlewares');
+const {requestFilter} = require('../../middlewares/object-filter');
+const {productValidate} = require('../../middlewares/product-validator');
+const ProductService = require('../service/ProductService');
 
 router.get('/', jwtMiddleware, async(req, res, next) =>{
     try {
@@ -33,12 +29,12 @@ router.post('/',
         } catch (error) {
             next(error);
         }
-    },
+    }
 );   
 
 router.get('/:id',
     jwtMiddleware,
-    async(req, res, next) =>{
+    async(req, req, next) =>{
         try {
             const product = await ProductService.getProductById(req.params.id);
             res.status(200).json(product);
