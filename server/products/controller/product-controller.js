@@ -25,7 +25,7 @@ router.post('/',
                 UserId: req.user.id,
             };
             await ProductService.createProduct(product);
-            req.status(201).end();
+            res.status(201).end();
         } catch (error) {
             next(error);
         }
