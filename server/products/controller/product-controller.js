@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const {jwtMiddleware} = require ('../../middlewares/auth-middlewares');
-const {requestFilter} = require('../../middlewares/object-filter');
-const {productValidate} = require('../../middlewares/product-validator');
 const ProductService = require('../service/ProductService');
+const {jwtMiddleware} = require ('../../middlewares/auth-middlewares');
+const objectFilter = require('../../middlewares/object-filter');
+const productValidate = require('../../middlewares/product-validator');
 
-router.get('/', jwtMiddleware, async(req, res, next) =>{
+router.get('/', jwtMiddleware, async(req, res, next) => {
     try {
         const products = await ProductService.getAllProducts();
         res.status(200).json(products);
@@ -16,7 +16,7 @@ router.get('/', jwtMiddleware, async(req, res, next) =>{
 
 router.post('/', 
     jwtMiddleware,
-    requestFilter('body', ['name', 'description', 'author', 'genre', 'image', 'price']),
+    objectFilter('body', ['name', 'description', 'author', 'genre', 'image', 'price']),
     productValidate('createProduct'),
     async(req, res, next) =>{
         try {
@@ -46,7 +46,7 @@ router.get('/:id',
 
 router.put('/:id',
     jwtMiddleware,
-    requestFilter('body', ['name', 'description', 'image', 'price', 'condition']),
+    objectFilter('body', ['name', 'description', 'image', 'price', 'condition']),
     productValidate('updateProduct'),
     async (req, res, next) => {
         try {
