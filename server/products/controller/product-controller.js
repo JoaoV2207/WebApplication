@@ -29,12 +29,12 @@ router.post('/',
         } catch (error) {
             next(error);
         }
-    }
+    },
 );   
 
 router.get('/:id',
     jwtMiddleware,
-    async(req, req, next) =>{
+    async(req, res, next) =>{
         try {
             const product = await ProductService.getProductById(req.params.id);
             res.status(200).json(product);
