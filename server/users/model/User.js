@@ -29,7 +29,7 @@ id: {
   },
   role:{
       type: DataTypes.ENUM,
-      values: ['funcionario', 'user'],
+      values: ['admin', 'user'],
       allowNull: false,
   }
 });
