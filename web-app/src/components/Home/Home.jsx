@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import "./Home.css"
 import cover from '../Home/assets/images/back-cover.jpg';
-import coverVariant from '../Home/assets/images/back-cover-variacao.jpg';
+//import coverVariant from '../Home/assets/images/back-cover-variacao.jpg';
 
 
 export default function Home(){
@@ -28,7 +28,7 @@ export default function Home(){
             <figure>
                 <img id="LogoV"
                 alt="coverVariant"
-                src={coverVariant}
+                //src={coverVariant}
                 widht="300px"
                 height="150px"
                 />
