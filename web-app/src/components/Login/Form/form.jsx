@@ -8,7 +8,7 @@ import axios from 'axios';
 export default function Form() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-   
+    
     const history = useHistory();
 
     function handleEmailChange(event){
@@ -21,7 +21,7 @@ export default function Form() {
 
     function handleSubmuit(event){
         event.preventDefault();
-        axios.post('/users/login', {email, password}).then((res) => history.push('/dashboard'))
+        axios.post('/users/login', {email, password}).then((res) => history.push('/Home'))
         .catch((err) => alert(err))
     }
 

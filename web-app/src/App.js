@@ -9,7 +9,6 @@ import './App.css';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 
-
 function App() {
   axios.defaults.baseURL = process.env.REACT_APP_API_URL;
   return (
@@ -19,7 +18,7 @@ function App() {
         <Route path="/">
             <Login />
           </Route>
-          <Route path="/">
+          <Route path="/Home">
             <Home />
           </Route>
         </Switch>
