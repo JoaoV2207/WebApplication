@@ -1,5 +1,5 @@
 const sequelize = require('../../database/index');
-const {DataTypes} = require('sequelize');
+const {DataType, DataTypes} = require('sequelize');
 
 const Sede  = sequelize.define('Sedes', {
     id: {
@@ -9,6 +9,13 @@ const Sede  = sequelize.define('Sedes', {
         allowNull: false,
     },
     name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    adress: {
+        type: DataTypes.STRING,
+    },
+    image:{
         type: DataTypes.STRING,
         allowNull: false,
     }
