@@ -5,6 +5,9 @@ import {useHistory} from 'react-router'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './Dashboard.css';
 
+import Product from './Product/Product';
+import ProductProfile from './ProductProfile/ProductProfile';
+
 export default function Dashboard() {
     const [user, setUser] = useState(false);
     useEffect(() =>{
@@ -38,8 +41,11 @@ export default function Dashboard() {
                     <Route path="/dashboard/users">
 
                     </Route>
+                    <Route path="/dashboard/products/:id">
+                        <ProductProfile user={user}/>
+                    </Route>
                     <Route path="/dashboard/products">
-
+                        <Product/>
                     </Route>
                 </Switch>
             </Router>
