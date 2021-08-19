@@ -8,6 +8,7 @@ import './Dashboard.css';
 import Product from './Product/Product';
 import ProductProfile from './ProductProfile/ProductProfile';
 import CadastroProduto from './CadastroProduto/CadastroProduto';
+import AlterarProduto from './AlterarProduto/AlterarProduto';
 
 export default function Dashboard() {
     const [user, setUser] = useState(false);
@@ -46,6 +47,11 @@ export default function Dashboard() {
                     <Route path="/dashboard/products/cadastro">
                         <CadastroProduto/>
                     </Route>
+
+                    <Route path="/dashboard/products/edit/:id">
+                        <AlterarProduto user={user}/>
+                    </Route>
+
                     <Route path="/dashboard/products/:id">
                         <ProductProfile user={user}/>
                     </Route>
