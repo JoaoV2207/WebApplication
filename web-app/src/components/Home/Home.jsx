@@ -36,14 +36,17 @@ export default function Home(){
                         <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
                           <ul className="navbar-nav  ">
                             <li className="nav-item active">
-                              <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
+                              <a className="nav-link" href="/Home">Home <span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
-                              <a className="nav-link" href="Sedes.jsx"> Sedes </a>
+                              <a className="nav-link" href="/Sedes"> Sedes </a>
                             </li>
                             <li className="nav-item">
-                              <a className="nav-link" href="books.html"> Livros </a>
+                              <a className="nav-link" href="/Books"> Livros </a>
                             </li>
+                            <li className="nav-item">
+                          <a className="nav-link" href="/Novidades"> Novidades </a>
+                        </li>
                             <li className="nav-item">
                               <a className="nav-link" href="login.html">Adicionar</a>
                             </li>
