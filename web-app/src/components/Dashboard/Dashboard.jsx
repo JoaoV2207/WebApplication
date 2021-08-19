@@ -7,6 +7,7 @@ import './Dashboard.css';
 
 import Product from './Product/Product';
 import ProductProfile from './ProductProfile/ProductProfile';
+import CadastroProduto from './CadastroProduto/CadastroProduto';
 
 export default function Dashboard() {
     const [user, setUser] = useState(false);
@@ -40,6 +41,9 @@ export default function Dashboard() {
                 <Switch>
                     <Route path="/dashboard/users">
 
+                    </Route>
+                    <Route path="/dashboard/products/cadastro">
+                        <CadastroProduto/>
                     </Route>
                     <Route path="/dashboard/products/:id">
                         <ProductProfile user={user}/>
