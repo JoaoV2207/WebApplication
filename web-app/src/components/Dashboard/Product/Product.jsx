@@ -1,8 +1,7 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-
-import {Button} from reactBootstrap;
+import {Button} from 'react-bootstrap';
 import ProductCard from '../ProductCard/ProductCard'; 
 import './Product.css'
 
@@ -24,7 +23,7 @@ export default function Product() {
         //Falta teminar o botão com a classe dele ainda
         <div className = "Product">
             <Link to ={`${useRouteMatch().path}/cadastro`}>
-                <Button>
+                <Button className = "botaoCadastro">
                     Cadastrar Produto
                 </Button>
             </Link>
