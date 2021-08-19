@@ -21,7 +21,7 @@ export default function Form() {
 
     function handleSubmuit(event){
         event.preventDefault();
-        axios.post('http://localhost:3000/users/login', {email, password}).then((res) => history.push('/Home'))
+        axios.post('/users/login', {email, password}).then((res) => history.push('/Dashboard'))
         .catch((err) => alert(err))
     }
 
