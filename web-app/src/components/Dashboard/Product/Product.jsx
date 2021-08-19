@@ -24,7 +24,7 @@ export default function Product() {
         //Falta teminar o botão com a classe dele ainda
         <div className = "Product">
             <Link to ={`${useRouteMatch().path}/cadastro`}>
-                <Button>
+                <Button className = "botaoCadastro">
                     Cadastrar Produto
                 </Button>
             </Link>
