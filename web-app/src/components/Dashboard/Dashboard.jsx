@@ -36,6 +36,7 @@ export default function Dashboard() {
             <hr/>
             <Nav.Link href="/dashboard/users">Usuarios</Nav.Link>
             <Nav.Link href="/dashboard/products">Produtos</Nav.Link>
+            <Nav.Link href="/Home">Home</Nav.Link>
             </Nav>
             <Router>
                 <Switch>
@@ -50,6 +51,10 @@ export default function Dashboard() {
                     </Route>
                     <Route path="/dashboard/products">
                         <Product/>
+                    </Route>
+
+                    <Route path="/Home">
+
                     </Route>
                 </Switch>
             </Router>

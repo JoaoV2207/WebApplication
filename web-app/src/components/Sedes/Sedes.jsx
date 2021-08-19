@@ -40,16 +40,16 @@ export default function Sedes(){
                     <div className="d-flex ml-auto flex-column flex-lg-row align-items-center">
                       <ul className="navbar-nav  ">
                         <li className="nav-item active">
-                          <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a>
+                          <a className="nav-link" href="/Home">Home <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="sedes.html"> Sedes </a>
+                          <a className="nav-link" href="/Sedes"> Sedes </a>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="books.html"> Livros </a>
+                          <a className="nav-link" href="/Books"> Livros </a>
                         </li>
                         <li className="nav-item">
-                          <a className="nav-link" href="novidades.html"> Novidades </a>
+                          <a className="nav-link" href="/Novidades"> Novidades </a>
                         </li>
                         <li className="nav-item">
                           <a className="nav-link" href="login.html">Login</a>
@@ -70,9 +70,9 @@ export default function Sedes(){
         <div className="wrapper">
           <div className="cols">
             <div className="col" ontouchstart="this.classList.toggle('hover');">
-              <a href="sede.html">
+              <a href="/Sede">
                 <div className="container">
-                  <div className="front" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=853&q=80)'}}>
+                  <div className="front" style={{backgroundImage: ('../Home/assets/images/BackSedes.jpg')}}>
                     <div className="inner">
                       <p>Pampulha</p>
                       <span>Av Novara</span>
@@ -84,10 +84,10 @@ export default function Sedes(){
                     </div>
                   </div>
                 </div>
-              </a></div><a href="sede.html">
+              </a></div><a href="/Sede">
             </a>  
             <div className="col" ontouchstart="this.classList.toggle('hover');">
-              <a href="sede.html">
+              <a href="/Sede">
                 <div className="container">
                   <div className="front" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=853&q=80)'}}>
                     <div className="inner">
@@ -104,7 +104,7 @@ export default function Sedes(){
               </a>
             </div>  
             <div className="col" ontouchstart="this.classList.toggle('hover');">
-              <a href="sede.html">
+              <a href="/Sede">
                 <div className="container">
                   <div className="front" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=853&q=80)'}}>
                     <div className="inner">
@@ -121,7 +121,7 @@ export default function Sedes(){
               </a> 
             </div> 
             <div className="col" ontouchstart="this.classList.toggle('hover');">
-              <a href="sede.html">
+              <a href="/Sede">
                 <div className="container">
                   <div className="front" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=853&q=80)'}}>
                     <div className="inner">
@@ -135,8 +135,8 @@ export default function Sedes(){
                     </div>
                   </div>
                 </div>
-              </a></div><a href="sede.html">
-            </a></div><a href="sede.html">
+              </a></div><a href="/Sede">
+            </a></div><a href="/Sede">
           </a>
         </div>
         {/* map section */}
