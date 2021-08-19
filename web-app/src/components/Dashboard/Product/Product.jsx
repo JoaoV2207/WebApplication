@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 
 import {Button} from reactBootstrap;
-import UserCard from '../ProductCard/ProductCard'; 
+import ProductCard from '../ProductCard/ProductCard'; 
 import './Product.css'
 
 export default function Product() {
