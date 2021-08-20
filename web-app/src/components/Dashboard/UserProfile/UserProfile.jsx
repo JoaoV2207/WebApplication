@@ -30,7 +30,6 @@ export default function UserProfile(props) {
                     <Card.Title>{user ? user.name: ''}</Card.Title>
                     <Card.Subtitle>{user ? user.role: ''}</Card.Subtitle>
                     <Card.Text>{user ? user.email: ''}</Card.Text>
-                    <Card.Text>{user ? user.condition: ''}</Card.Text>
                     <Link style = {disableButton() ? {pointerEvents: 'none'}:null} to={`/dashboard/users/edit/${id}`}>
                         <Button disable = {disableButton() ? true : false} variant="outline-warning">
                             Editar Usuario

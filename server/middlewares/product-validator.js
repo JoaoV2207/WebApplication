@@ -39,7 +39,7 @@ function getValidations(method) {
 
         ];
     };
-    case 'uptadeProduct':{
+    case 'updateProduct':{
         return [
             body('name')
             .optional()

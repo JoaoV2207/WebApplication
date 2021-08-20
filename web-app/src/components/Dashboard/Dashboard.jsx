@@ -13,7 +13,10 @@ import CadastroProduto from './CadastroProduto/CadastroProduto';
 import AlterarProduto from './AlterarProduto/AlterarProduto';
 import AlterarUser from './AlterarUser/AlterarUser';
 import CadastroUser from "./CadastroUsuario/CadastroUser";
-
+import Sede from './Sede/Sede';
+import SedeProfile from './SedeProfile/SedeProfile';
+import CadastroSede from './CadastroSede/CadastroSede';
+import AlterarSede from './AlterarSede/AlterarSede';
 export default function Dashboard() {
     const [user, setUser] = useState(false);
     useEffect(() =>{
@@ -41,10 +44,18 @@ export default function Dashboard() {
             <hr/>
             <Nav.Link href="/dashboard/users">Usuarios</Nav.Link>
             <Nav.Link href="/dashboard/products">Produtos</Nav.Link>
+            <Nav.Link href="/dashboard/sedes">Sedes</Nav.Link>
             <Nav.Link href="/Home">Home</Nav.Link>
             </Nav>
             <Router>
                 <Switch>
+                <Route path="/dashboard/sedes/cadastro">
+                        <CadastroSede/>
+                    </Route> 
+                    <Route path="/dashboard/sedes/edit/:Id">
+                        <AlterarSede/>
+                    </Route>
+                    
                     <Route path="/dashboard/users/cadastro">
                         <CadastroUser/>
                     </Route> 
@@ -74,6 +85,10 @@ export default function Dashboard() {
 
                     <Route path="/Home">
 
+                    </Route>
+
+                    <Route path="dashboard/sedes">
+                        <Sede/>
                     </Route>
                 </Switch>
             </Router>

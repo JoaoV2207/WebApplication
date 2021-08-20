@@ -18,7 +18,7 @@ class ProductService {
         return product;
     }
 
-    async updateProductInfo(id, reqUserRole, body){
+    async updateProductInfo(id, reqUserId, reqUserRole, body){
         const product = await Product.findByPk(id);
         if (!product){
             throw new QueryError('Não foi encontrado um produto com ID ${id}')

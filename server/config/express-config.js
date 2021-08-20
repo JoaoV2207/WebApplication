@@ -24,6 +24,8 @@ app.use('/users', usersRouter);
 const productRouter = require('../products/controller/product-controller');
 app.use('/products', productRouter);
 
+const sedesRouter = require('../sede/controller/sede-controller');
+app.use('/sedes', sedesRouter);
 const errorHandler = require('../middlewares/error-handler');
 app.use(errorHandler);
 

@@ -59,7 +59,7 @@ router.put('/:id',
             );
 
             res.status(204).end();
-        } catch (error) {
+        } catch(error) {
             next(error);
         }
     }
