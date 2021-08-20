@@ -29,7 +29,7 @@ export default function SedeProfile(props) {
                 <Card.Body>
                     <Card.Title>{sede ? sede.name: ''}</Card.Title>
                     <Card.Subtitle>{sede ? sede.adress: ''}</Card.Subtitle>
-                    
+                    <Card.Text>{sede ? sede.image: ''}</Card.Text>
                     <Link style = {disableButton() ? {pointerEvents: 'none'}:null} to={`/dashboard/sedes/edit/${id}`}>
                         <Button disable = {disableButton() ? true : false} variant="outline-warning">
                             Editar Sede

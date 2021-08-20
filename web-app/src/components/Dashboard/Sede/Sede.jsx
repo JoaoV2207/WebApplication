@@ -4,7 +4,7 @@ import { Link, useRouteMatch } from 'react-router-dom';
 
 import {Button} from 'react-bootstrap';
 import SedeCard from '../SedeCard/SedeCard'; 
-import './Sede.css'
+import './Sede.css';
 
 export default function Sede() {
     const [sede, setSede] = useState();
