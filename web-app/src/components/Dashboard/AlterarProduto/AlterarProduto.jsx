@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import {Form, Button} from 'react-bootstrap';
-import { useHistory, useParams } from 'react-router';
+import {useParams} from 'react-router;'
 
 import './AlterarProduto.css';
 
@@ -28,17 +28,15 @@ export default function AlterarProduto(){
         if (event.target.name === "price")
             setFormValues({...formValues, price:event.target.value})               
     }
-
-    let { id } = useParams(); 
-    const history = useHistory();
+    let {id} = useParams();
     const handleSubmit = (event) =>{
         event.preventDefault();
         axios.put(`/products/${id}`, formValues)
-            .then((res) => history.push('/dashboard'))//Se der errado, colocar console.log(res) ao invés do history.push 
+            .then((res) => console.log(res))
             .catch ((err) => console.log(err.response))
     }
     return (
-        <div className="formProduto">
+        <div className="CadastroProduto">
             <Form onSubmit={handleSubmit} className="formProduto">
                 <Form.Group controlId="formbasicName">
                     <Form.Control name="name" onChange={inputChange} type = "text" placeholder="Name"/>
@@ -58,7 +56,7 @@ export default function AlterarProduto(){
                 <Form.Group controlId="formbasicPrice"> 
                     <Form.Control name="price" onChange={inputChange} type = "text" placeholder="0.00"/>
                 </Form.Group> 
-                <Button variant="warning" type="submit"> Concluir Edição </Button>
+                <Button variant="warning" type="submit">Concluir Edicao</Button>
             </Form>
         </div> 
     )
