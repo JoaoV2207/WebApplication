@@ -5,10 +5,14 @@ import {useHistory} from 'react-router'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './Dashboard.css';
 
+import UserProfile from './UserProfile/UserProfile';
+import Users from './Users/Users';
 import Product from './Product/Product';
 import ProductProfile from './ProductProfile/ProductProfile';
 import CadastroProduto from './CadastroProduto/CadastroProduto';
 import AlterarProduto from './AlterarProduto/AlterarProduto';
+import AlterarUser from './AlterarUser/AlterarUser';
+import CadastroUser from "./CadastroUsuario/CadastroUser";
 
 export default function Dashboard() {
     const [user, setUser] = useState(false);
@@ -41,8 +45,17 @@ export default function Dashboard() {
             </Nav>
             <Router>
                 <Switch>
+                    <Route path="/dashboard/users/cadastro">
+                        <CadastroUser/>
+                    </Route> 
+                    <Route path="/dashboard/users/edit/:Id">
+                        <AlterarUser/>
+                    </Route>
+                    <Route path="/dashboard/users/:Id">
+                        <UserProfile user={user}/>
+                    </Route>
                     <Route path="/dashboard/users">
-
+                        <Users/>
                     </Route>
                     <Route path="/dashboard/products/cadastro">
                         <CadastroProduto/>

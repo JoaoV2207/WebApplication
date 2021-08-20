@@ -35,7 +35,7 @@ export default function CadastroProduto(){
     }
     return (
         <div className="CadastroProduto">
-            <Form onSubmit={handleSubmit} className="CadastroProduto">
+            <Form onSubmit={handleSubmit} className="formProduto">
                 <Form.Group controlId="formbasicName">
                     <Form.control name="name" onChange={inputChange} type = "text" placeholder="Name"/>
                 </Form.Group>

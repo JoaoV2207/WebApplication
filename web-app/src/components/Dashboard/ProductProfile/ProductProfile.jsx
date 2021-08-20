@@ -9,7 +9,8 @@ export default function ProductProfile(props) {
     const [product, setProduct] = useState();
     let {id} = useParams();
 
-    const disableButton = () => (props.user.role !== 'admin') ? true : false;
+    const disableButton = () => (props.user.role !== 'admin') ||
+    (props.user.Id !== (product ? product.UserId : null)) ? true : false;
     useEffect(()=>
         axios.get(`/products/${id}`))
         .then((res) => setProduct(res.data))
