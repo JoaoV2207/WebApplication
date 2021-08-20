@@ -11,9 +11,10 @@ export default function UserProfile(props) {
 
     const disableButton = () => (props.user.role !== 'admin') ? true : false;
     useEffect(()=>
-        axios.get(`/users/user/${id}`))
+        axios.get(`/users/user/${id}`)
         .then((res) => setUser(res.data))
-        .cath((err) => console.log(err.response))
+        .catch((err) => console.log(err.response))
+        [id])
     const handleDelete = (event) =>{
         event.preventDefault();
         axios.delete(`/users/user/${id}`)

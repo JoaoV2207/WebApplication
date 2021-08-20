@@ -4,12 +4,12 @@ import { Link, useRouteMatch } from 'react-router-dom';
 
 import {Button} from 'react-bootstrap';
 import UserCard from '../UserCard/UserCard'; 
-import './User.css'
+import './Users.css'
 
 export default function User() {
     const [users, setUser] = useState();
     useEffect(() => 
-        axios.get('/products')
+        axios.get('/users')
         .then((res) => setUser(res.data))
         .catch((err) => console.log(err.response)), 
         []);

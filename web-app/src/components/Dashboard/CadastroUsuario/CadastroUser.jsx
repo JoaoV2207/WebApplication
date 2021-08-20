@@ -33,16 +33,16 @@ export default function CadastroUser(){
         <div className="CadastroUser">
             <Form onSubmit={handleSubmit} className="formUser">
                 <Form.Group controlId="formbasicName">
-                    <Form.control name="name" onChange={inputChange} type = "text" placeholder="Name"/>
+                    <Form.Control name="name" onChange={inputChange} type = "text" placeholder="Name"/>
                 </Form.Group>
                 <Form.Group controlId="formbasicAuthor">
-                    <Form.control name="email" onChange={inputChange} type = "text" placeholder="Author"/>
+                    <Form.Control name="email" onChange={inputChange} type = "text" placeholder="Author"/>
                 </Form.Group>
                 <Form.Group controlId="formbasicImage">
-                    <Form.control name="image" onChange={inputChange} type = "text" placeholder="Image"/>
+                    <Form.Control name="image" onChange={inputChange} type = "text" placeholder="Image"/>
                 </Form.Group>
                 <Form.Group controlId="formbasicPrice"> 
-                    <Form.control name="password" onChange={inputChange} type = "password" placeholder="0.00"/>
+                    <Form.Control name="password" onChange={inputChange} type = "password" placeholder="0.00"/>
                 </Form.Group> 
                 <Button variant="sucess" type="submit">Concluir Cadastro </Button>
             </Form>

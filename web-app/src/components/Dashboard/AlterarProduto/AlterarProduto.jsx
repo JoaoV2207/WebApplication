@@ -38,25 +38,25 @@ export default function AlterarProduto(){
             .catch ((err) => console.log(err.response))
     }
     return (
-        <div className="CadastroProduto">
-            <Form onSubmit={handleSubmit} className="CadastroProduto">
+        <div className="formProduto">
+            <Form onSubmit={handleSubmit} className="formProduto">
                 <Form.Group controlId="formbasicName">
-                    <Form.control name="name" onChange={inputChange} type = "text" placeholder="Name"/>
+                    <Form.Control name="name" onChange={inputChange} type = "text" placeholder="Name"/>
                 </Form.Group>
                 <Form.Group controlId="formbasicAuthor">
-                    <Form.control name="author" onChange={inputChange} type = "text" placeholder="Author"/>
+                    <Form.Control name="author" onChange={inputChange} type = "text" placeholder="Author"/>
                 </Form.Group>
                 <Form.Group controlId="formbasicGenre">
-                    <Form.control name="genre" onChange={inputChange} type = "text" placeholder="Genre"/>
+                    <Form.Control name="genre" onChange={inputChange} type = "text" placeholder="Genre"/>
                 </Form.Group>
                 <Form.Group controlId="formbasicDescription">
-                    <Form.control name="description" onChange={inputChange} type = "text" placeholder="Description"/>
+                    <Form.Control name="description" onChange={inputChange} type = "text" placeholder="Description"/>
                 </Form.Group>
                 <Form.Group controlId="formbasicImage">
-                    <Form.control name="image" onChange={inputChange} type = "text" placeholder="Image"/>
+                    <Form.Control name="image" onChange={inputChange} type = "text" placeholder="Image"/>
                 </Form.Group>
                 <Form.Group controlId="formbasicPrice"> 
-                    <Form.control name="price" onChange={inputChange} type = "text" placeholder="0.00"/>
+                    <Form.Control name="price" onChange={inputChange} type = "text" placeholder="0.00"/>
                 </Form.Group> 
                 <Button variant="warning" type="submit"> Concluir Edição </Button>
             </Form>

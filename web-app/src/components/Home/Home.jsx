@@ -61,23 +61,7 @@ export default function Home(){
                 </header>
               </div>
               {/*---- end header section ------ */}
-              <div className="row justify-content-sm-center">
-                <div className="col-12 head">
-                  <div className="card">
-                    <div className="imgBox">
-                      <div className="bark" />
-                      <img src="images/Untitled design (1).png" />
-                    </div>
-                    <div className="details">
-                      <h4 className="color1">Nossa missão</h4>
-                      <p>Tornar a leitura mais acessível e fomentar o pensamento crítico e analítico na sociedade</p>
-                      <h4 className="color1">Nossa visão</h4>
-                      <p>Ser referência de Livraria para todo o Brasil e propagar a leitura em aspecto nacional</p>
-                      <h4 className="color1">Nossos valores</h4>
-                      <p>Ser Pensante, acessibilidade, diversidade, ler e aprender</p>      </div>
-                  </div> 
-                </div>
-              </div>
+              
               {/* about section */}
               <div className="bg">
                 <section className="about_section layout_padding">

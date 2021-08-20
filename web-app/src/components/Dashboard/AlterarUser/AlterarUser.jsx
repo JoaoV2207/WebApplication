@@ -19,9 +19,9 @@ export default function AlterarUser(){
     })
 
     useEffect(() => {
-        axios.get(`/users/user/${Id}`).them(res => setUser(res.data))
-        .catch(err => console.log(err));
-    }, []);
+        axios.get(`/users/user/${Id}`).then(res => setUser(res.data))
+        .catch(err => console.log(err))
+    }, [Id]);
 
     useEffect(() => {
         if (user) setFormValues({name: user.name, email: user.email, image: user.image, role:user.role})
