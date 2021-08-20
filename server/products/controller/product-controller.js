@@ -46,7 +46,7 @@ router.get('/:id',
 
 router.put('/:id',
     jwtMiddleware,
-    objectFilter('body', ['name', 'description', 'image', 'price', 'condition']),
+    objectFilter('body', ['name', 'description', 'author', 'genre', 'image', 'price']),
     productValidate('updateProduct'),
     async (req, res, next) => {
         try {

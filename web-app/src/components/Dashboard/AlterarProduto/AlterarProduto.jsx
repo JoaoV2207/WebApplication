@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import {Form, Button} from 'react-bootstrap';
-import {useParams} from 'react-router;'
+import {useParams} from 'react-router';
 
 import './AlterarProduto.css';
 
@@ -31,7 +31,7 @@ export default function AlterarProduto(){
     let {id} = useParams();
     const handleSubmit = (event) =>{
         event.preventDefault();
-        axios.put(`/products/${id}`, formValues)
+        axios.put('/products/${id}', formValues)
             .then((res) => console.log(res))
             .catch ((err) => console.log(err.response))
     }

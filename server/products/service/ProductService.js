@@ -49,7 +49,7 @@ class ProductService {
             );
         }
 
-        await product.delete();
+        await product.destroy();
     }        
 }
 
